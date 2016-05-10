@@ -157,6 +157,11 @@ round((table(missing)[2]/length(dat1$steps))*100,0)
 md<-median(dat1$steps,na.rm=TRUE)
 mn<-mean(dat1$steps,na.rm=TRUE)
 dat2<-dat1
+```
+Use the mean to fill in the missing data (simplest option)
+
+
+```r
 dat2$steps[is.na(dat2$steps)]<-mn
 mean(dat2$steps)
 ```
@@ -192,7 +197,7 @@ qplot(SumPerDay2$SumSteps, xlab='Total steps per day', ylab='Frequency')
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
 
 
 ###4.4 Calculate and report the mean and median total number of steps taken per day
@@ -239,5 +244,5 @@ ggplot(MeanActivityDat2, aes(interval, steps)) +
     ylab("avarage number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
 There are differences, the highest peak of activity at 500 to 1000 is lower at weekend, but the activity from there on is higher.

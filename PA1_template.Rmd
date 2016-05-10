@@ -1,9 +1,9 @@
 ---
 title: 'Reproducible Research: Peer Assessment 1'
 output:
+  word_document: default
   html_document:
     keep_md: yes
-  word_document: default
 ---
 ##Load Required Libraries
 ```{r}
@@ -76,6 +76,10 @@ round((table(missing)[2]/length(dat1$steps))*100,0)
 md<-median(dat1$steps,na.rm=TRUE)
 mn<-mean(dat1$steps,na.rm=TRUE)
 dat2<-dat1
+```
+Use the mean to fill in the missing data (simplest option)
+
+```{r}
 dat2$steps[is.na(dat2$steps)]<-mn
 mean(dat2$steps)
 ```
